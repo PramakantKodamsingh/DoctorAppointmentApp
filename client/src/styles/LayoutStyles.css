@@ -1,0 +1,121 @@
+.main{
+    padding: 10px;
+    height: 100vh;
+    
+    
+
+   
+}
+.layout{
+    display:flex;
+}
+
+.sidebar{
+    min-height:100%;
+    margin-bottom: 20px;
+    width:300px;
+    border-radius: 5px;
+    background-color: rgb(50, 130, 210);
+    box-shadow: 0 0 2px gray;
+    margin-right: 20px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+.content{
+    width:100%;
+    height: 100%;
+
+}
+.header{
+    height: 10vh;
+    margin-bottom: 20px;
+    box-shadow: 0 0 2px gray;
+    background-color: white;
+    border-radius: 5px;
+
+}
+.body{
+    height: 85vh;
+    margin-bottom: 20px;
+    box-shadow: 0 0 2px gray;
+    border-radius: 5px;
+    background-color: white;
+
+}
+.logo h6{
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px 0px;
+    font-weight: bold;
+}
+
+.menu-item a{
+    color: white;
+    text-decoration: none;
+    font-size:1.5rem;
+   
+
+}
+.menu-item i{
+    font-size: 1.5rem;
+    margin:30px 15px ;
+
+}
+.active{
+    background-color: white;
+}
+.active a,.active i{
+    color:  rgb(50, 130, 210);  
+}
+.header-content{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    justify-content: flex-end;
+    margin: 0 10px;
+}
+.header-content i {
+    margin-right: 5px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header-content i:hover {
+    color: rgb(139, 0, 139); /* Same color as the text hover for consistency */
+    transform: rotate(15deg) scale(1.2); /* Slight rotation and scale effect */
+}
+
+.header-content a  {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: rgb(50, 130, 210);
+    margin: 0 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.header-content a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: blueviolet;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.header-content a:hover {
+    color: blueviolet;
+    transform: scale(1.05);
+}
+
+.header-content a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

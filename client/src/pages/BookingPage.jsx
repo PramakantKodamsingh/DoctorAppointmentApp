@@ -7,6 +7,7 @@ import moment from "moment";
 import { DatePicker, TimePicker, message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
+import "../styles/BookingpageStyles.css";
 
 const BookingPage = () => {
   const { user } = useSelector((state) => state.user);
@@ -114,41 +115,55 @@ const BookingPage = () => {
 
   return (
     <Layout>
-      <h3>BookingPage</h3>
-      <div className="container m-2 w-50">
+      <h3
+        className="booking-page"
+        style={{
+          fontFamily: "Arial, sans-serif",
+          fontWeight: "bold",
+          color: "purple",
+        }}
+      >
+        Booking Page
+      </h3>
+      <div className="container booking-page">
         {doctor && (
           <div>
-            <h4>
-              Dr.{doctor.firstName} {doctor.lastName}
+            <h4
+              style={{
+                fontFamily: "cursive",
+                fontWeight: "bold",
+                textShadow: "1px 1px 1px #0000FF",
+              }}
+            >
+              Dr. {doctor.firstName} {doctor.lastName}
             </h4>
-            <h4>Fees : {doctor.feesPerCunsaltation}</h4>
-
-            <h4>
+            <h4
+              style={{
+                fontFamily: "serif",
+                fontWeight: "bold",
+              }}
+            >
+              Fees: {doctor.feesPerCunsaltation}
+            </h4>
+            <h4
+              style={{
+                fontFamily: "serif",
+                fontWeight: "bold",
+              }}
+            >
               Timings: {startTime} - {endTime}
             </h4>
-
-            <div className="d-flex flex-column">
+            <div className="d-flex">
               <DatePicker
                 format="DD-MM-YYYY"
-                onChange={(value) =>
-                  // setDate(moment(value.format("DD-MM-YYYY"))._i)
-                  setDate(value)
-                }
+                onChange={(value) => setDate(value)}
                 style={{ margin: "5px" }}
               />
-              <TimePicker
-                format="HH:mm"
-                // onChange={(value) => setTime(moment(value.format("HH:mm"))._i)}
-                onChange={(value) => setTime(value)}
-              />
-              <button
-                className="btn btn-primary mt-2"
-                onClick={handleAvailability}
-              >
+              <TimePicker format="HH:mm" onChange={(value) => setTime(value)} />
+              <button className="btn btn-primary" onClick={handleAvailability}>
                 Check Availability
               </button>
-
-              <button className="btn btn-success mt-2" onClick={handleBooking}>
+              <button className="btn btn-success" onClick={handleBooking}>
                 Book Now
               </button>
             </div>

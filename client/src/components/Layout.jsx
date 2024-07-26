@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/LayoutStyles.css";
-import { adminMenu, userMenu } from "../Data/data.js";
+
 import { Link, useLocation } from "react-router-dom";
 // import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
@@ -43,11 +43,73 @@ function Layout({ children }) {
 
   //================doctor menu====================//
 
+  const adminMenu = [
+    {
+      name: "Home",
+      path: "/",
+      icon: "fa-solid fa-house",
+    },
+    {
+      name: "Profile",
+      path: `/admin/profile/${user?._id}`,
+      icon: "fa-solid fa-user",
+    },
+
+    {
+      name: "Users",
+      path: "/admin/users",
+      icon: "fa-solid fa-users",
+    },
+    {
+      name: "Doctors",
+      path: "/admin/doctors",
+      icon: "fa-solid fa-user-doctor",
+    },
+  ];
+  //================admin menu=====================//
+
+  //================user menu=====================//
+
+  const userMenu = [
+    {
+      name: "Home",
+      path: "/",
+      icon: "fa-solid fa-house",
+    },
+    {
+      name: "Profile",
+      path: `/user/profile/${user?._id}`,
+      icon: "fa-solid fa-user",
+    },
+
+    {
+      name: "Appointments",
+      path: "/appointments",
+      icon: "fa-solid fa-list",
+    },
+    {
+      name: "Apply Doctor",
+      path: "/apply-doctor",
+      icon: "fa-solid fa-user-doctor",
+    },
+  ];
+  //================user menu ======================//
+
   const SidebarMenu = user?.isAdmin
     ? adminMenu
     : user?.isDoctor
     ? doctorMenu
     : userMenu;
+
+  const getProfilePath = () => {
+    if (user?.isAdmin) {
+      return `/admin/profile/${user?._id}`;
+    } else if (user?.isDoctor) {
+      return `/doctor/profile/${user?._id}`;
+    } else {
+      return `/user/profile/${user?._id}`;
+    }
+  };
   return (
     <div className="main">
       <div className="layout">
@@ -90,7 +152,7 @@ function Layout({ children }) {
                 </Badge>
               </Link>
 
-              <Link to="/profile">{user?.name}</Link>
+              <Link to={getProfilePath()}>{user?.name}</Link>
             </div>
           </div>
           <div className="body">{children}</div>

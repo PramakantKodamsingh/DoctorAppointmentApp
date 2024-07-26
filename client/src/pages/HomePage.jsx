@@ -29,13 +29,24 @@ function HomePage() {
   }, []);
   return (
     <Layout>
-      <h1 className="text-center">HomePage</h1>
-      <Row>
-        {doctors &&
-          doctors.map((doctor) => {
-            return <DoctorList doctor={doctor} key={doctor._id} />;
-          })}
-      </Row>
+      <section id="choosedoctor" style={{ height: "100vh" }}>
+        <h1
+          className="text-center"
+          style={{
+            fontFamily: "Arial, sans-serif",
+            fontWeight: "bold",
+            textShadow: "1px 1px 2px #673ab7 ",
+          }}
+        >
+          Choose Your Doctor{" "}
+        </h1>
+        <Row>
+          {doctors &&
+            doctors.map((doctor) => {
+              return <DoctorList doctor={doctor} key={doctor._id} />;
+            })}
+        </Row>
+      </section>
     </Layout>
   );
 }

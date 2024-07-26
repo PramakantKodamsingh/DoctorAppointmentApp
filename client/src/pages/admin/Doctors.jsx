@@ -91,7 +91,16 @@ const Doctors = () => {
 
   return (
     <Layout>
-      <h4>All Doctors</h4>
+      <h4
+        className="p-3 text-center"
+        style={{
+          fontFamily: "Arial, sans-serif",
+          fontWeight: "bold",
+          color: "purple",
+        }}
+      >
+        All Doctors
+      </h4>
       <Table columns={columns} dataSource={doctors}></Table>
     </Layout>
   );

@@ -70,7 +70,16 @@ const Appointments = () => {
 
   return (
     <Layout>
-      <h1 className="text-center">Appointment List</h1>
+      <h1
+        className="p-3 text-center"
+        style={{
+          fontFamily: "Arial, sans-serif",
+          fontWeight: "bold",
+          color: "purple",
+        }}
+      >
+        Appointment List
+      </h1>
       <Table columns={columns} dataSource={appointments} rowKey="_id" />
     </Layout>
   );

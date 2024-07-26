@@ -11,9 +11,11 @@ import NotificationPage from "./pages/NotificationPage";
 import Doctors from "./pages/admin/Doctors";
 import Users from "./pages/admin/Users";
 import Profile from "./pages/doctor/Profile";
+import UserProfile from "./pages/user/userProfile";
 import BookingPage from "./pages/BookingPage";
 import Appointments from "./pages/Appointments";
 import DoctorAppointments from "./pages/doctor/DoctorAppointments";
+import AdminProfile from "./pages/admin/adminProfile";
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -92,6 +94,23 @@ function App() {
                 </RouteProtected>
               }
             />
+            <Route
+              path="/user/profile/:id"
+              element={
+                <RouteProtected>
+                  <UserProfile />
+                </RouteProtected>
+              }
+            />
+            <Route
+              path="/admin/profile/:id"
+              element={
+                <RouteProtected>
+                  <AdminProfile />
+                </RouteProtected>
+              }
+            />
+
             <Route
               path="/doctor/book-appointment/:doctorId"
               element={

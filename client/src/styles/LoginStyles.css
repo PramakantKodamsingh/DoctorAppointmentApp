@@ -1,14 +1,116 @@
-.form-container{
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #e2e8f0;
+}
+
+.form-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    
+    height: 80vh;
 }
-.register-form{
+
+.register-form {
     text-align: center;
-    border: 1px solid gray;
-    border-radius: 20px;
-    padding: 30px;
-    width: 30%;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
 }
+
+.register-form:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.register-form h1 {
+    margin-bottom: 20px;
+    color: #2d3748;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ant-form-item {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.ant-form-item label {
+    color: #4a5568;
+    font-size: 14px;
+}
+
+.ant-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.ant-input:focus {
+    border-color: #4299e1;
+    outline: none;
+    box-shadow: 0 0 8px rgba(66, 153, 225, 0.3);
+}
+
+.m-2 {
+    margin: 20px 0;
+    display: block;
+    color: #4299e1;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.m-2:hover {
+    text-decoration: underline;
+    color: #2b6cb0;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #4299e1;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #2b6cb0;
+    transform: scale(1.05);
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animated-text {
+    display: inline-block;
+    font-weight: bold; /* Make text bold */
+    color: #3498db; /* Change text color */
+    animation: fadeIn 2s ease-in-out infinite; /* Apply animation infinitely */
+    font-family: cursive;
+  
+   
+  }
+  
+  
+  
+  
+  
+  

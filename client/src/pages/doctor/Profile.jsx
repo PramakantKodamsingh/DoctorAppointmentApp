@@ -71,7 +71,6 @@ const Profile = () => {
   }, []);
   return (
     <Layout>
-      <h1>Manage Profile</h1>
       {doctor && (
         <Form
           layout="vertical"
@@ -87,7 +86,15 @@ const Profile = () => {
           initialValues={doctor}
         >
           {/* Labels are displayed above the input fields. */}
-          <h4 className="">Personal Details</h4>
+          <h4
+            style={{
+              fontFamily: "Arial, sans-serif",
+              fontWeight: "bold",
+              color: "purple",
+            }}
+          >
+            Personal Details
+          </h4>
           <Row gutter={20}>
             <Col xs={24} md={24} lg={8}>
               <Form.Item
@@ -206,9 +213,11 @@ const Profile = () => {
 
             <Col xs={24} md={24} lg={8}></Col>
             <Col xs={24} md={24} lg={8}>
-              <button className="btn btn-primary form-btn" type="submit">
-                Update
-              </button>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <button className="btn btn-primary form-btn" type="submit">
+                  Update
+                </button>
+              </div>
             </Col>
           </Row>
         </Form>

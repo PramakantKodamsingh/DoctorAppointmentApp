@@ -1,4 +1,5 @@
 import doctorModels from "../models/doctorModel.js";
+import userModel from "../models/UserModels.js";
 import UserModels from "../models/UserModels.js";
 
 const getAllUsersController = async (req, res) => {
@@ -65,8 +66,51 @@ const changeAccountStatusController = async (req, res) => {
   }
 };
 
+//========single admin info
+
+const getAdminInfoController = async (req, res) => {
+  try {
+    const admin = await userModel.findOne({ _id: req.body.userId });
+    res.status(200).send({
+      success: true,
+      message: "Admin data fetch success",
+      data: admin,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in Fetching Admin Details",
+      error,
+    });
+  }
+};
+
+const updateAdminController = async (req, res) => {
+  try {
+    const newadmin = await userModel.findOneAndUpdate(
+      { _id: req.body.userId },
+      req.body
+    );
+    res.status(200).send({
+      success: true,
+      message: "Admin Profile Updated",
+      data: newadmin,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Admin Profile Update Issue",
+      error,
+    });
+  }
+};
+
 export {
   getAllDoctorController,
   getAllUsersController,
   changeAccountStatusController,
+  getAdminInfoController,
+  updateAdminController,
 };

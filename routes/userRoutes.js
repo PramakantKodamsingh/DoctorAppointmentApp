@@ -10,6 +10,8 @@ import {
   bookAppointmentController,
   bookingAvailabilityController,
   userAppointmentsController,
+  getSingleUserInfoController,
+  updateUserController,
 } from "../controllers/userCtrl.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
@@ -48,5 +50,11 @@ router
 router
   .route("/user-appointments")
   .get(authMiddleware, userAppointmentsController);
+
+router
+  .route("/getSingleUserInfo")
+  .post(authMiddleware, getSingleUserInfoController);
+
+router.route("/updateUserInfo").post(authMiddleware, updateUserController);
 
 export default router;

@@ -24,6 +24,7 @@ const NotificationPage = () => {
       );
       dispatch(hideLoading());
       if (res.data.success) {
+        window.location.reload();
         message.success(res.data.message);
       } else {
         message.error(res.data.message);
@@ -49,6 +50,7 @@ const NotificationPage = () => {
       dispatch(hideLoading());
       if (res.data.success) {
         //res.data will be the object inside res.status not only the data key value
+        window.location.reload();
         message.success(res.data.message);
       } else {
         message.error(res.data.message);
@@ -65,13 +67,19 @@ const NotificationPage = () => {
       label: "Read",
       children: (
         <div>
-          <div className="d-flex justify-content-end">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              padding: "10px",
+            }}
+          >
             <h4
               className="p-2 text-primary"
               style={{ cursor: "pointer" }}
               onClick={handleMarkAllRead}
             >
-              Mark All Read
+              <button className="btn btn-primary">Mark All Read</button>
             </h4>
           </div>
           {user?.notification?.map(
@@ -85,9 +93,19 @@ const NotificationPage = () => {
                 onClick={() =>
                   (window.location.href = notificationMsg.onClickPath)
                 }
-                style={{ Cursor: "pointer" }}
+                style={{ Cursor: "pointer", margin: "10px" }}
               >
-                <div className="card-text">{notificationMsg.message}</div>
+                <div
+                  className="card-text"
+                  style={{
+                    margin: "10px",
+                    fontFamily: "cursive",
+                    fontWeight: "bold",
+                    display: "flex",
+                  }}
+                >
+                  {notificationMsg.message}
+                </div>
               </div>
             )
           )}
@@ -99,13 +117,19 @@ const NotificationPage = () => {
       label: "Unread",
       children: (
         <div>
-          <div className="d-flex justify-content-end">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              padding: "10px",
+            }}
+          >
             <h4
               className="p-2 text-primary"
               style={{ cursor: "pointer" }}
               onClick={handleDeleteAllRead}
             >
-              Delete All Read
+              <button className="btn btn-danger">Delete All Read</button>
             </h4>
           </div>
           {user?.seennotification?.map(
@@ -119,9 +143,19 @@ const NotificationPage = () => {
                 onClick={() =>
                   (window.location.href = notificationMsg.onClickPath)
                 }
-                style={{ Cursor: "pointer" }}
+                style={{ Cursor: "pointer", margin: "10px" }}
               >
-                <div className="card-text">{notificationMsg.message}</div>
+                <div
+                  className="card-text"
+                  style={{
+                    margin: "10px",
+                    fontFamily: "cursive",
+                    fontWeight: "bold",
+                    display: "flex",
+                  }}
+                >
+                  {notificationMsg.message}
+                </div>
               </div>
             )
           )}
@@ -132,7 +166,16 @@ const NotificationPage = () => {
 
   return (
     <Layout>
-      <h4 className="p-3 text-center">Notification Page</h4>
+      <h4
+        className="p-3 text-center"
+        style={{
+          fontFamily: "Arial, sans-serif",
+          fontWeight: "bold",
+          color: "purple",
+        }}
+      >
+        Notification Page
+      </h4>
       <Tabs defaultActiveKey="0" items={tabs} />
     </Layout>
   );

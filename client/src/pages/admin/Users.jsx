@@ -56,7 +56,16 @@ const Users = () => {
   ];
   return (
     <Layout>
-      <h4>All Users</h4>
+      <h4
+        className="p-3 text-center"
+        style={{
+          fontFamily: "Arial, sans-serif",
+          fontWeight: "bold",
+          color: "purple",
+        }}
+      >
+        All Users
+      </h4>
       <Table columns={columns} dataSource={users} />
     </Layout>
   );

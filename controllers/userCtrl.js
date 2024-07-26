@@ -277,6 +277,45 @@ const userAppointmentsController = async (req, res) => {
   }
 };
 
+const getSingleUserInfoController = async (req, res) => {
+  try {
+    const singleuser = await userModel.findOne({ _id: req.body.userId });
+    res.status(200).send({
+      success: true,
+      message: "Single User data fetch success",
+      data: singleuser,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in Fetching Single User Details",
+      error,
+    });
+  }
+};
+
+const updateUserController = async (req, res) => {
+  try {
+    const singleUser = await userModel.findOneAndUpdate(
+      { _id: req.body.userId },
+      req.body
+    );
+    res.status(200).send({
+      success: true,
+      message: "User Profile Updated",
+      data: singleUser,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "User Profile Update Issue",
+      error,
+    });
+  }
+};
+
 export {
   loginController,
   registerController,
@@ -288,4 +327,6 @@ export {
   bookAppointmentController,
   bookingAvailabilityController,
   userAppointmentsController,
+  getSingleUserInfoController,
+  updateUserController,
 };

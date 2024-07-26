@@ -42,11 +42,27 @@ function ApplyDoctor() {
   };
   return (
     <Layout>
-      <h1 className="text-center">Apply your doctor</h1>
+      <h3
+        className="p-3 text-center"
+        style={{
+          fontFamily: "Arial, sans-serif",
+          fontWeight: "bold",
+          color: "purple",
+        }}
+      >
+        Apply your doctor
+      </h3>
 
       <Form layout="vertical" onFinish={handleFinish} className="m-3">
         {/* Labels are displayed above the input fields. */}
-        <h4 className="">Personal Details</h4>
+        <h5
+          style={{
+            fontFamily: "Arial, sans-serif",
+            fontWeight: "bold",
+          }}
+        >
+          Personal Details
+        </h5>
         <Row gutter={20}>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
@@ -55,7 +71,11 @@ function ApplyDoctor() {
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your firstname" />
+              <Input
+                type="text"
+                placeholder="your firstname"
+                style={{ height: "40px" }}
+              />
             </Form.Item>
           </Col>
 
@@ -66,7 +86,11 @@ function ApplyDoctor() {
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your lastname" />
+              <Input
+                type="text"
+                placeholder="your lastname"
+                style={{ height: "40px" }}
+              />
             </Form.Item>
           </Col>
 
@@ -77,7 +101,11 @@ function ApplyDoctor() {
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="Enter your phone no." />
+              <Input
+                type="text"
+                placeholder="Enter your phone no."
+                style={{ height: "40px" }}
+              />
             </Form.Item>
           </Col>
 
@@ -88,7 +116,11 @@ function ApplyDoctor() {
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your email" />
+              <Input
+                type="text"
+                placeholder="your email"
+                style={{ height: "40px" }}
+              />
             </Form.Item>
           </Col>
 
@@ -99,7 +131,11 @@ function ApplyDoctor() {
               //   required
               //   rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your name" />
+              <Input
+                type="text"
+                placeholder="your name"
+                style={{ height: "40px" }}
+              />
             </Form.Item>
           </Col>
 
@@ -110,14 +146,25 @@ function ApplyDoctor() {
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your address" />
+              <Input
+                type="text"
+                placeholder="your address"
+                style={{ height: "40px" }}
+              />
             </Form.Item>
           </Col>
         </Row>
 
         {/* professional data */}
 
-        <h4 className="">Professional Data</h4>
+        <h5
+          style={{
+            fontFamily: "Arial, sans-serif",
+            fontWeight: "bold",
+          }}
+        >
+          Professional Data
+        </h5>
         <Row gutter={20}>
           <Col xs={24} md={24} lg={8}>
             <Form.Item
@@ -126,7 +173,11 @@ function ApplyDoctor() {
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your specialization" />
+              <Input
+                type="text"
+                placeholder="your specialization"
+                style={{ height: "40px" }}
+              />
             </Form.Item>
           </Col>
 
@@ -137,7 +188,11 @@ function ApplyDoctor() {
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="your experience" />
+              <Input
+                type="text"
+                placeholder="your experience"
+                style={{ height: "40px" }}
+              />
             </Form.Item>
           </Col>
 
@@ -148,7 +203,11 @@ function ApplyDoctor() {
               required
               rules={[{ required: true }]}
             >
-              <Input type="text" placeholder="fees per cunsaltation" />
+              <Input
+                type="text"
+                placeholder="fees per cunsaltation"
+                style={{ height: "40px" }}
+              />
             </Form.Item>
           </Col>
 

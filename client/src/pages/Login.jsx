@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Checkbox, Form, Input, message } from "antd";
-import "../styles/RegisterStyles.css";
+import "../styles/LoginStyles.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -34,6 +34,10 @@ function Login() {
 
   return (
     <>
+      <div style={{ textAlign: "center", marginTop: "40px" }}>
+        <h1 className="animated-text">Welcome To DOC APP</h1>
+      </div>
+
       <div className="form-container">
         <Form
           layout="vertical"

@@ -1,4 +1,4 @@
-import { message, Table } from "antd";
+import { Flex, message, Table } from "antd";
 import Layout from "../../components/Layout";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -84,23 +84,26 @@ const DoctorAppointments = () => {
       render: (text, record) => {
         return (
           <div className="d-flex">
-            {record.status === "pending" && (
-              <div className="d-flex">
+            <div style={{ display: "flex" }}>
+              {record.status === "pending" ||
+                ("rejected" && (
+                  <button
+                    className="btn btn-success"
+                    onClick={() => handleStatus(record, "approved")}
+                    style={{ marginRight: "10px" }}
+                  >
+                    Approve
+                  </button>
+                ))}
+              {record.status === "approved" && (
                 <button
-                  className="btn btn-success"
-                  onClick={() => handleStatus(record, "approved")}
-                  style={{ marginRight: "10px" }}
-                >
-                  Approve
-                </button>
-                <button
-                  className="btn btn-danger"
+                  className="btn btn-danger "
                   onClick={() => handleStatus(record, "rejected")}
                 >
                   Reject
                 </button>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         );
       },
@@ -109,7 +112,16 @@ const DoctorAppointments = () => {
 
   return (
     <Layout>
-      <h1 className="text-center">Appointment List</h1>
+      <h3
+        className="text-center"
+        style={{
+          fontFamily: "Arial, sans-serif",
+          fontWeight: "bold",
+          color: "purple",
+        }}
+      >
+        Appointment List
+      </h3>
       <Table columns={columns} dataSource={appointments} rowKey="_id" />
     </Layout>
   );

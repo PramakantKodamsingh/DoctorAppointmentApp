@@ -122,17 +122,15 @@ function Layout({ children }) {
             {SidebarMenu.map((menu) => {
               const isActive = location.pathname === menu.path;
               return (
-                <>
-                  <div
-                    key={menu.name}
-                    className={`menu-item ${isActive && "active"}`}
-                  >
-                    <i className={menu.icon}></i>
-                    <Link to={menu.path}>
-                      <b>{menu.name}</b>
-                    </Link>
-                  </div>
-                </>
+                <div
+                  key={menu.name}
+                  className={`menu-item ${isActive && "active"}`}
+                >
+                  <i className={menu.icon}></i>
+                  <Link to={menu.path}>
+                    <b>{menu.name}</b>
+                  </Link>
+                </div>
               );
             })}
             <div className="menu-item" onClick={logoutHandler}>

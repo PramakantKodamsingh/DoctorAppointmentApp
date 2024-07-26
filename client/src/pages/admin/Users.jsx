@@ -66,7 +66,7 @@ const Users = () => {
       >
         All Users
       </h4>
-      <Table columns={columns} dataSource={users} />
+      <Table columns={columns} dataSource={users} rowKey="_id" />
     </Layout>
   );
 };

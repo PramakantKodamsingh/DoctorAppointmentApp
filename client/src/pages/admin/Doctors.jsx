@@ -101,7 +101,7 @@ const Doctors = () => {
       >
         All Doctors
       </h4>
-      <Table columns={columns} dataSource={doctors}></Table>
+      <Table columns={columns} dataSource={doctors} rowKey="_id"></Table>
     </Layout>
   );
 };

@@ -71,6 +71,16 @@ const Profile = () => {
   }, []);
   return (
     <Layout>
+      <h2
+        style={{
+          fontFamily: "Arial, sans-serif",
+          fontWeight: "bold",
+          color: "purple",
+          textAlign: "center",
+        }}
+      >
+        Manage Profile
+      </h2>
       {doctor && (
         <Form
           layout="vertical"
@@ -90,7 +100,6 @@ const Profile = () => {
             style={{
               fontFamily: "Arial, sans-serif",
               fontWeight: "bold",
-              color: "purple",
             }}
           >
             Personal Details

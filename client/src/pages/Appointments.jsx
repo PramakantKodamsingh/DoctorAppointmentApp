@@ -23,7 +23,7 @@ const Appointments = () => {
         message.error(res.data.message);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       message.error("Failed to fetch appointments");
     }
   };

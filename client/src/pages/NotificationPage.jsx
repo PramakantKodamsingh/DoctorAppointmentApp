@@ -30,7 +30,7 @@ const NotificationPage = () => {
         message.error(res.data.message);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       message.error("Can't mark read");
     }
   };
@@ -56,7 +56,7 @@ const NotificationPage = () => {
         message.error(res.data.message);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       message.error("Can't delete notifications");
     }
   };

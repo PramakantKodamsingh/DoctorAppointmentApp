@@ -11,7 +11,7 @@ function Register() {
   const dispatch = useDispatch();
 
   const onFinishHandler = async (values) => {
-    console.log(values);
+    // console.log(values);
     try {
       dispatch(showLoading());
       const res = await axios.post(
@@ -27,7 +27,7 @@ function Register() {
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
+      // console.log(error);
       message.error("Something gone Wrong");
     }
   };

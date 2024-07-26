@@ -34,6 +34,7 @@ const UserProfile = () => {
       );
       dispatch(hideLoading());
       if (res.data.success) {
+        window.location.reload();
         message.success(res.data.message);
         navigate("/");
       } else {
@@ -41,7 +42,7 @@ const UserProfile = () => {
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
+      // console.log(error);
       message.error("Something went wrong");
     }
   };
@@ -61,7 +62,7 @@ const UserProfile = () => {
         setSingleuser(res.data.data);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   useEffect(() => {

@@ -10,7 +10,7 @@ const getDoctorInfoController = async (req, res) => {
       data: doctor,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: "Error in Fetching Doctor Details",
@@ -31,7 +31,7 @@ const updateProfileController = async (req, res) => {
       data: doctor,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: "Doctor Profile Update Issue",
@@ -50,7 +50,7 @@ const getDoctorByIdController = async (req, res) => {
       data: doctor,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       message: "Error in fetching single Doctor Info",
       error,
@@ -72,7 +72,7 @@ const doctorAppointmentsController = async (req, res) => {
       data: appointments,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       error,
@@ -101,7 +101,7 @@ const updateStatusController = async (req, res) => {
       message: "Appiontment Status Updated",
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       error,

@@ -11,7 +11,7 @@ const getAllUsersController = async (req, res) => {
       data: users,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: "Error in finding Users",
@@ -29,7 +29,7 @@ const getAllDoctorController = async (req, res) => {
       data: doctors,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: "Error in finding Doctors",
@@ -57,7 +57,7 @@ const changeAccountStatusController = async (req, res) => {
       data: doctor,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     req.status(500).send({
       success: false,
       message: "Error in Account Status",
@@ -77,7 +77,7 @@ const getAdminInfoController = async (req, res) => {
       data: admin,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: "Error in Fetching Admin Details",
@@ -98,7 +98,7 @@ const updateAdminController = async (req, res) => {
       data: newadmin,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: "Admin Profile Update Issue",

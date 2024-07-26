@@ -32,7 +32,7 @@ const RouteProtected = ({ children }) => {
     } catch (error) {
       dispatch(hideLoading());
       localStorage.clear();
-      console.log(error);
+      // console.log(error);
     }
   };
 

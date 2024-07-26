@@ -21,7 +21,7 @@ export default async function authMiddleware(req, res, next) {
       }
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(401).send({
       message: "Auth Failed",
       success: false,

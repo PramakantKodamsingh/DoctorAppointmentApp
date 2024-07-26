@@ -43,7 +43,7 @@ const Profile = () => {
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
+      // console.log(error);
       message.error("Something went wrong");
     }
   };
@@ -63,7 +63,7 @@ const Profile = () => {
         setDoctor(res.data.data);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   useEffect(() => {

@@ -32,7 +32,7 @@ const BookingPage = () => {
         setDoctor(res.data.data);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -70,14 +70,14 @@ const BookingPage = () => {
         }
       );
       dispatch(hideLoading());
-      console.log(time);
+      // console.log(time);
       if (res.data.success) {
         message.success(res.data.message);
       }
     } catch (error) {
       dispatch(hideLoading());
       message.error("Error while booking appointment");
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -106,7 +106,7 @@ const BookingPage = () => {
     } catch (error) {
       dispatch(hideLoading());
       setIsAvailable(false);
-      console.log(error);
+      // console.log(error);
     }
   };
   useEffect(() => {

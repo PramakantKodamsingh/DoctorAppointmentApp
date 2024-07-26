@@ -23,7 +23,7 @@ const DoctorAppointments = () => {
         message.error(res.data.message);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       message.error("Failed to fetch appointments");
     }
   };
@@ -85,16 +85,16 @@ const DoctorAppointments = () => {
         return (
           <div className="d-flex">
             <div style={{ display: "flex" }}>
-              {record.status === "pending" ||
-                ("rejected" && (
-                  <button
-                    className="btn btn-success"
-                    onClick={() => handleStatus(record, "approved")}
-                    style={{ marginRight: "10px" }}
-                  >
-                    Approve
-                  </button>
-                ))}
+              {(record.status === "pending" ||
+                record.status === "rejected") && (
+                <button
+                  className="btn btn-success"
+                  onClick={() => handleStatus(record, "approved")}
+                  style={{ marginRight: "10px" }}
+                >
+                  Approve
+                </button>
+              )}
               {record.status === "approved" && (
                 <button
                   className="btn btn-danger "

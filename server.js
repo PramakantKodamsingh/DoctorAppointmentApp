@@ -45,9 +45,9 @@ app.use("/api/v1/doctor", doctorRoutes);
 // Serve static files and handle SPA routes
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-app.use(express.static(path.join(__dirname, "./client")));
+app.use(express.static(path.join(__dirname, "./client/dist")));
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/index.html"));
+  res.sendFile(path.join(__dirname, "./client/dist/index.html"));
 });
 
 // Port

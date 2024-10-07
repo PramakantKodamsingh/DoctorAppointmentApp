@@ -1,4 +1,4 @@
-Doctor Appointment System
+<h1>Doctor Appointment System</h1>
 A MERN stack application that allows users to book doctor appointments and manage their profiles. Doctors receive appointment notifications, and the admin has full control over the system.
 
 <br>

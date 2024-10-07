@@ -56,4 +56,4 @@ Admins can log in at the /admin route to manage the following:
 
 <ul> <li>Review and approve doctor applications</li> <li>Access user and doctor data</li> <li>Block or unblock users if necessary</li> </ul> <br>
 <h3>Upcoming Features</h3>
-<ul> <li>Payment integration for appointment bookings</li> <li>Google Calendar sync for automatic scheduling</li> <li>Enhanced admin reporting for better analytics</li> </ul>
+<ul> <li>Payment integration for appointment bookings</li> <li>Google Calendar sync for automatic scheduling</li> <li>Enhanced admin reporting for better analytics</li> <li>Chating platform for Patient and doctor</li></ul>

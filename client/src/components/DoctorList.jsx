@@ -15,7 +15,7 @@ const DoctorList = ({ doctor }) => {
         onClick={() => navigate(`/doctor/book-appointment/${doctor._id}`)}
       >
         <div className="card-header">
-          Dr.{doctor.firstName} {doctor.lastName}
+          Dr.{doctor.firstName} {doctor.firstName}
         </div>
         <div className="card-body">
           <b>Specialization :</b>
